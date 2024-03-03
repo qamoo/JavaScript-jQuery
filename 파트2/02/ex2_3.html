@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>결과값표시기능-Boolean</title>
+  <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+</head>
+<body id="boolean">
+
+<div id="result" style="display: none; margin-top: 100px;">
+  <div class="boolean" style="display: none;">
+    <p><strong>* Boolean 결과값</strong></p>
+    <div class="true" style="color: #fff;background-color: blue;">TRUE</div>
+    <div class="false" style="color: #fff;background-color: red;">FALSE</div>
+  </div>
+</div>
+
+  <script>
+    // 함수 선언: resultBoolean
+    function resultBoolean(result){
+      var $result = $("#result");
+
+      $result.show().find(".boolean").show();
+      if(result){
+        $result.find(".boolean .false").hide();
+      }else{
+        $result.find(".boolean .true").hide();
+      }
+    }
+    // 함수 실행 : resultBoolean
+    resultBoolean($("body").is("#boolean"));
+  </script>
+
+</body>
+</html>
